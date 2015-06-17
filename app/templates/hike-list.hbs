@@ -1,0 +1,7 @@
+<h1>This is the hike list:</h1>
+
+<ul>
+  {{#each hike in model}}
+    <li>{{#link-to 'hikedetail' hike.id}}{{hike.name}} - {{hike.description}} - {{hike.location}}{{/link-to}}</li>
+  {{/each}}
+</ul>

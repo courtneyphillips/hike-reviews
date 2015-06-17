@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'hiker-review',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://popping-inferno-4128.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

@@ -1,0 +1,14 @@
+<h1>Hikes of Epicodus</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Hike Name</label>
+    {{input id="name" class="form-control" value=name}}
+    <label for="description">Description</label>
+    {{input id="description" class="form-control" value=description}}
+    <label for="location">Location</label>
+    {{input id="location" class="form-control" value=location}}
+    <br>
+    <button class="btn btn-primary" {{action 'create'}}>Post Hike!</button>
+  </div>
+</form>

@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('home', {path: '/'});
+  this.resource('hike-list');
+  this.resource('hikenew');
+  this.resource('hikedetail', {path: 'hikedetail/:hike_id'}, function() {
+    this.resource('comment');
+  });
 });
 
 export default Router;

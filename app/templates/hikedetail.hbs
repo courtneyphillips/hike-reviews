@@ -1,0 +1,24 @@
+<h3>hike detail page</h3>
+
+
+<h3>Location: {{model.location}}</h3>
+
+<h3>Description: {{model.description}}</h3>
+
+
+<h3>Comments:</h3>
+
+{{outlet}}
+
+
+New Comment:
+<form>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    {{input id="name" class="form-control" value=name}}
+    <label for="text">Comment:</label>
+    {{input id="text" class="form-control" value=text}}
+    <br>
+    <button class="btn btn-primary" {{action 'newComment'}}>Post Comment!</button>
+  </div>
+</form>

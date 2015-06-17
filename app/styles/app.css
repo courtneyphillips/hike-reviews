@@ -1,0 +1,41 @@
+.carousel-inner > .item {
+    width: 100%;
+    height:100%;
+    /*position:relative;*/
+    overflow:hidden;
+}
+
+.carousel-inner > .item > img{
+    top:0;
+    left:0;
+     }
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none
+}
+
+#myCarousel {
+  margin-top: -20px;
+  padding-top: 0;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 90px;
+
+}
+
+.lead {
+  font-weight: lighter;
+  font-size: x-large;
+  letter-spacing: 2px;
+}
+
+.h1 {
+  letter-spacing: 5px;
+  font-size: xx-large;
+}
