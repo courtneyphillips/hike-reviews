@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  text: DS.attr('string'),
+  hike: DS.belongsTo('hike', {async: true}),
   name: DS.attr('string'),
-  hike: DS.belongsTo('hike', {async: true})
+  text: DS.attr('string'),
+  rating: DS.attr('string')
 });

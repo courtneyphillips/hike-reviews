@@ -5,13 +5,7 @@
 
 <h3>Description: {{model.description}}</h3>
 
-
-<h3>Comments:</h3>
-
-{{outlet}}
-
-
-New Comment:
+New Feedback:
 <form>
   <div class="form-group">
     <label for="name">Name:</label>
@@ -19,6 +13,34 @@ New Comment:
     <label for="text">Comment:</label>
     {{input id="text" class="form-control" value=text}}
     <br>
-    <button class="btn btn-primary" {{action 'newComment'}}>Post Comment!</button>
-  </div>
+
+    <label for="rating">  Rating: {{rating}}</label>
+
+     <!-- {{view Ember.Select content=ratingoptions}} -->
+
+
+
+
+{{view Ember.Select
+    content=selectContentType
+    optionValuePath="content.value"
+    optionLabelPath="content.label"
+    selectionBinding=selectedContentType}}
+
+
+
+      <button class="btn btn-primary" {{action 'newcomment'}}>Post Feedback!</button>
+
+
+
+    </div>
+
 </form>
+
+
+
+<ul>
+  {{#each comment in model.comment}}
+    <li>{{comment.rating}}<br>{{comment.name}}:  {{comment.text}}<br></li>
+  {{/each}}
+</ul>

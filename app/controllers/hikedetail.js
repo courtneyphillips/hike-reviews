@@ -1,22 +1,34 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  // needs: ['hike'],
+  needs: ['hikenew'],
+  selectContentType: [{label: "easy", value: "easy"}, {label: "medium", value: "medium"},{label: "difficult", value: "difficult"}],
+  selectedContentType: null,
+
   actions: {
-    newComment: function() {
-      var newComment = this.store.createRecord('comment', {
+    newcomment: function() {
+      var comment = this.store.createRecord('comment', {
         name: this.get('name'),
-        text: this.get('text')
+        text: this.get('text'),
+        rating: this.get('selectedContentType.value'),
+
       });
-      newComment.save();
+      this.set("name", "");
+      this.set("text", "");
+      var hike = this.get("model");
+      comment.save().then(function() {
+        hike.get('comment').pushObject(comment);
+        hike.save();
 
-            // var hike = this;
-            // hike.get('comments').pushObject(newComment);
-            // this.set('name', '');
-            // this.set('text', '');
-            // hike.save();
-      this.transitionToRoute('hikedetail');
+      });
+      debugger;
+      this.transitionToRoute('hikedetail', hike);
     }
-  }
 
+    // commentCount: function() {
+    //   var comments =
+    //   var count = 0;
+    //
+    // }
+  }
 });

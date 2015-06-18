@@ -1,7 +1,31 @@
-<h1>This is the hike list:</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+  <h1>This is the hike list:</h1>
 
-<ul>
-  {{#each hike in model}}
-    <li>{{#link-to 'hikedetail' hike.id}}{{hike.name}} - {{hike.description}} - {{hike.location}}{{/link-to}}</li>
-  {{/each}}
-</ul>
+  <button class="btn btn-primary" {{action 'sortHikes'}}>Sort by Popularity</button>
+
+  <ul>
+    {{#each hike in model}}
+      <li><u>{{#link-to 'hikedetail' hike.id}}Hike Name: {{hike.name}}{{/link-to}}</u><br>
+          Description: {{hike.description}}<br>
+          Location: {{hike.location}}<br>
+          <!-- Comments: {{comment-count hike}} -->
+      </li>
+
+    {{/each}}
+  </ul>
+    </div>
+
+    <div class="col-md-8">
+      <h2 id="title">My Map Component</h2>
+  {{google-map latitude="34.851939" longitude="-82.399752"}}
+
+      <!-- /*<script type="text/x-handlebars" id="components/google-maps">
+        <div class="map-canvas">*/ -->
+
+        <!-- </div>
+      </script> -->
+    </div>
+  </div>
+</div>
